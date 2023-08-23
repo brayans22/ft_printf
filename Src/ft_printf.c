@@ -28,27 +28,45 @@ int     is_valid_input(const char *s, unsigned int nargs)
     return (is_valid);
 }
 
+void    print_string_format(char *str, unsigned int *count_read)
+{
+    if (str)
+        ft_putstr(str);
+    else
+        ft_putstr("(null)");
+    (*count_read) += ft_strlen(str);
+}
+
+void    print_char_format(char c, unsigned int *count_read)
+{
+    ft_putchar(c);
+    (*count_read)++;
+}
+
+void    print_decimal_sign_format(char c, unsigned int *count_read)
+{
+    ft_putchar(c);
+    (*count_read)++;
+}
+
+
 void    print_format_case(char format, unsigned int *count_read, va_list p_arguments)
 {
     if (format == STRING_FORMAT)
-    {
-        print_string_format ((char *)va_arg(p_arguments, char *), count_read);
-    }
+        print_string_format((char *)va_arg(p_arguments, char *), count_read);
+    else if (format == CHARACTER_FORMAT || format == PERCENTAGE_FORMAT)
+        print_char_format((char)va_arg(p_arguments, int), count_read);
     else if (format == INTEGER_FORMAT || format == DECIMAL_FORMAT || format == UNSIGNED_DECIMAL_FORMAT)
     {
-        print_decimal_format ((int)va_arg(p_arguments, int), format, count_read);
-    }
-    else if (format == CHARACTER_FORMAT || format == PERCENTAGE_FORMAT)
-    {
-        char c = va_arg(p_arguments, int);
-        print_character_format((char)c, count_read);
+        count_read--;
+        //print_decimal_format ((int)va_arg(p_arguments, int), format, count_read);
     }
     else if (format == POINTER_FORMAT)
-        print_pointer_format (va_arg(p_arguments, int), count_read);
+        count_read++;
     else if (format == FLOAT_FORMAT)
-        print_float_format((float) va_arg(p_arguments, double), count_read);
+        count_read++;
     else if (format == HEX_LOWER_FORMAT || format == HEX_UPPER_FORMAT)
-        print_hex_format((int)va_arg(p_arguments, int), count_read, format);
+        count_read++;
 }
 
 int ft_printf(char const *format, ...)
@@ -63,10 +81,10 @@ int ft_printf(char const *format, ...)
     count_read = 0;
     while (*format)
     {
-        if (*format == PERCENTAGE_FORMAT && is_format(*(format + 1)))
+        if (*(format) == PERCENTAGE_FORMAT && is_format(*(format + 1)))
         {
             
-            //print_format_case(*(format + 1), &count_read, p_args);
+            print_format_case(*(format + 1), &count_read, p_args);
             format++;
         }
         else 
@@ -80,17 +98,19 @@ int ft_printf(char const *format, ...)
     return (count_read);
 }
 
+/*
 #include <stdio.h>
 int main()
 {
     printf("jejejej\n");
-    int a = ft_printf("leyo :%i\n", __INT_MAX__);
-    int b = ft_printf("leyo: %i\n", -2147483648);
-    int c = printf("leyo: %i\n", __INT_MAX__);
-    int d = printf("leyo: %li\n", -2147483648);
+    char c = 'M';
+    char n[] = "brayan";
+    int a = ft_printf("Nombre: %s, sexo: %c\n", n, c);
+    int b = printf("Nombre: %s, sexo: %c\n", n, c);
 
-    printf("max mia:%i min mia:%i max original:%i min_original:%i\n",a,b,c,d);
+    printf("copia: %i, original:%i\n",a,b);
     //printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
-    //ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+    //("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
     return 0;
 }
+*/

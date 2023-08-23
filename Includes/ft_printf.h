@@ -22,4 +22,9 @@
 /* FUNCTIONS */
 int ft_printf(char const *format, ...);
 
+
+void	ft_putchar(char c);
+void	ft_putnbr_base(int nb, int base);
+void	ft_putstr(char *str);
+
 #endif

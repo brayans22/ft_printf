@@ -1,6 +1,6 @@
 #include "../Includes/util.h"
 
-size_t  ft_len_unsigned_int_nb(unsigned int nb, unsigned int base)
+size_t  ft_len_uintptr(uintptr_t nb, uintptr_t base)
 {
     size_t len;
 

@@ -3,11 +3,14 @@ NAME = libftprintf.a
 SRCS =	Src/ft_putchar.c				\
 		Src/ft_putstr.c 				\
 		Src/ft_putnbr_base_unsigned.c	\
+		Src/ft_putnbr_base_uintptr.c    \
 		Src/ft_printf.c		    		\
 		Src/ft_itoa.c                   \
 		Src/ft_strdup.c         		\
 		Src/ft_len_unsigned_int_nb.c    \
+		Src/ft_len_uintptr.c    		\
 		Src/ft_len_int_nb.c				\
+		Src/print_format.c				\
 		Src/ft_strlen.c         
 
 INCLUDES = ./Includes

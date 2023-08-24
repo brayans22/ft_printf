@@ -1,17 +1,15 @@
 NAME = libftprintf.a
 
-SRCS =	Src/ft_putchar.c			\
-	Src/ft_putstr.c 				\
-	Src/ft_putnbr_base_signed.c		\
-	Src/ft_putnbr_base_unsigned.c	\
-	Src/ft_printf.c		    		\
-	Src/ft_tolower.c				\
-	Src/ft_strdup.c         		\
-	Src/ft_number_len_unsigned.c    \
-	Src/ft_number_len_signed.c		\
-	Src/ft_strlen.c         
+SRCS =	Src/ft_putchar.c				\
+		Src/ft_putstr.c 				\
+		Src/ft_putnbr_base_unsigned.c	\
+		Src/ft_printf.c		    		\
+		Src/ft_itoa.c                   \
+		Src/ft_strdup.c         		\
+		Src/ft_len_unsigned_int_nb.c    \
+		Src/ft_len_int_nb.c				\
+		Src/ft_strlen.c         
 
-	
 INCLUDES = ./Includes
 
 OBJS = ${SRCS:.c=.o}

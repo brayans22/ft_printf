@@ -6,7 +6,7 @@
 # include <unistd.h>
 #include "libft.h"
 
-/* CONSTANTS*/
+/* FORMATS CONSTANTS */
 #define DECIMAL_FORMAT 'd'
 #define CHARACTER_FORMAT 'c'
 #define INTEGER_FORMAT 'i'
@@ -19,12 +19,17 @@
 #define PERCENTAGE_FORMAT '%'
 #define BACKSLAH '\\'
 
+/* BASE CONTANTS */
+#define DECIMAL_BASE 10
+#define HEXADECIMAL_BASE 16
+
 /* FUNCTIONS */
-int ft_printf(char const *format, ...);
-
-
+int     ft_printf(char const *format, ...);
 void	ft_putchar(char c);
-void	ft_putnbr_base(int nb, int base);
-void	ft_putstr(char *str);
+void	ft_putnbr_base_signed(int nb, int base);
+void    ft_putnbr_base_unsigned(unsigned int nb, unsigned int base);
+void	ft_putstr(const char *str);
+size_t  ft_number_len_signed(int nb, int base);
+size_t  ft_number_len_unsigned(unsigned int nb, unsigned int base);
 
 #endif

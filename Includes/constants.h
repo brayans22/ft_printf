@@ -11,7 +11,6 @@
 #define HEX_LOWER_FORMAT            'x'
 #define HEX_UPPER_FORMAT            'X'
 #define PERCENTAGE_FORMAT           '%'
-#define BACKSLAH                    '\\'
 
 /* BASE CONTANTS */
 #define DECIMAL_NB                  10
@@ -23,6 +22,11 @@
 /* OTHERS */
 #define PTR_NIL                         "(nil)"
 #define STR_NULL                        "(null)"
-#define HEXADECIMAL_ZERO_ADDRESS        "0x"
+#define ZERO_ADDRESS                    "0x"
+#define LEN_ZERO_ADDRESS                2
+#define LEN_NIL_WORD                    5
+#define LEN_NULL_WORD                   6
+#define MIN_RANGE_INT_IN_STR_FORMAT     "-2147483648"
+#define LEN_MIN_RANGE_INT               11
 
 #endif

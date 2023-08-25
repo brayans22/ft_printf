@@ -30,10 +30,11 @@ int main()
 {
     printf("jejejej\n");
     char c = 'M';
+    int nb = -2147483648;
     //char n[] = "brayan";
     char *p = 0;
-    int a = ft_printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p\n", p, c, -1, p);
-    int b = printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p\n", p, c, -1, p);
+    int a = ft_printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p, edad: %i\n", p, c, -1, p, nb);
+    int b = printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p, edad: %i\n", p, c, -1, p, nb);
 
     printf("copia: %i, original:%i\n",a,b);
     return 0;

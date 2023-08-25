@@ -6,7 +6,6 @@
 
 /* FUNCTIONS */
 size_t  ft_strlen(const char * s1);
-char	*ft_strdup(const char *s1);
-char    *ft_itoa(int n);
+int	    ft_atoi(char *str);
 
 #endif

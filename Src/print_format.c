@@ -11,27 +11,18 @@ void    print_string(char *str, unsigned int *count_read)
 {
     if (!str)
         str = STR_NULL;
-    ft_putstr(str);
-    (*count_read) += ft_strlen(str);
+    (*count_read) += ft_putstr(str);
 }
 
 void    print_char(char c, unsigned int *count_read)
 {
-    ft_putchar(c);
-    (*count_read)++;
+   (*count_read) += ft_putchar(c);
 }
 
 void    print_int(int number, unsigned int *count_read)
 {
-    char *number_str;
-    number_str = ft_itoa(number);
-
-    if (number_str)
-    {
-        ft_putstr(number_str);
-        (*count_read) += ft_strlen(number_str);
-        free(number_str);
-    }
+    ft_putnbr_decimal_base_int(number);
+    (*count_read) += ft_len_int_nb(number, DECIMAL_NB);
 }
 
 void    print_unsigned_int(unsigned int number, unsigned int *count_read, unsigned int base_number, char *content_base)
@@ -43,13 +34,12 @@ void    print_unsigned_int(unsigned int number, unsigned int *count_read, unsign
 void    print_pointer(uintptr_t ptr, unsigned int *count_read)
 {
     if (ptr == 0)
-        (*count_read) += write(1, PTR_NIL, 5);
-    else
     {
-        write(1, HEXADECIMAL_ZERO_ADDRESS, 2);
-        ft_putnbr_base_uintptr(ptr, HEX_NB, LOWER_HEX_BASE);
-        (*count_read) += 2 + (ft_len_uintptr(ptr, HEX_NB));
+        (*count_read) += ft_putstr(PTR_NIL);
+        return ;
     }
+    (*count_read) += ft_putstr(ZERO_ADDRESS) + ft_len_uintptr(ptr, HEX_NB);
+    ft_putnbr_base_uintptr(ptr, HEX_NB, LOWER_HEX_BASE);
 }
 
 void    print_format(char format, unsigned int *count_read, va_list p_arguments)

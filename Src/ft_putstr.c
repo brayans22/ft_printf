@@ -1,13 +1,16 @@
 #include "../Includes/util.h"
 
-void	ft_putstr(const char *str)
+unsigned int ft_putstr(const char *str)
 {
-	if (str)
+	unsigned int len_str;
+
+	len_str = 0;
+	if (!str)
+		str = PTR_NIL;
+	while (*str)
 	{
-		while (*str)
-		{
-			ft_putchar(*str);
-			str++;
-		}
+		len_str += ft_putchar(*str);
+		str++;
 	}
+	return (len_str);
 }

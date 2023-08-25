@@ -8,7 +8,6 @@
 #include "constants.h"
 #include "util.h"
 
-
 /* FUNCTIONS */
 void    print_char(char c, unsigned int *count_read);
 void    print_format(char format, unsigned int *count_read, va_list p_arguments);

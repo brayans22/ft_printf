@@ -20,4 +20,8 @@
 #define LOWER_HEX_BASE              "0123456789abcdef"
 #define DEC_BASE                    "0123456789"
 
+/* OTHERS */
+#define PTR_NIL                         "(Nil)"
+#define STR_NULL                        "(Null)"
+
 #endif

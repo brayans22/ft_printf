@@ -23,17 +23,16 @@ int     ft_printf(char const *format, ...)
     va_end(p_args);
     return (count_read);
 }
-
 /*
 #include <stdio.h>
 int main()
 {
     printf("jejejej\n");
     char c = 'M';
-    char n[] = "brayan";
+    //char n[] = "brayan";
     char *p = 0;
-    int a = ft_printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p\n", n, c, -1, p);
-    int b = printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p\n", n, c, -1, p);
+    int a = ft_printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p\n", p, c, -1, p);
+    int b = printf("Nombre: %s, sexo: %c, numero sin signo: %u, ptr: %p\n", p, c, -1, p);
 
     printf("copia: %i, original:%i\n",a,b);
     return 0;

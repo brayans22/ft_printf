@@ -10,7 +10,7 @@ int     is_format(char f)
 void    print_string(char *str, unsigned int *count_read)
 {
     if (!str)
-        str = "(null)";
+        str = STR_NULL;
     ft_putstr(str);
     (*count_read) += ft_strlen(str);
 }
@@ -43,7 +43,7 @@ void    print_unsigned_int(unsigned int number, unsigned int *count_read, unsign
 void    print_pointer(uintptr_t ptr, unsigned int *count_read)
 {
     if (ptr == 0)
-        (*count_read) += write(1, "(nil)", 5);
+        (*count_read) += write(1, PTR_NIL, 5);
     else
     {
         write(1, "0x", 2);

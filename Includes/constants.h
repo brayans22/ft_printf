@@ -21,7 +21,8 @@
 #define DEC_BASE                    "0123456789"
 
 /* OTHERS */
-#define PTR_NIL                         "(Nil)"
-#define STR_NULL                        "(Null)"
+#define PTR_NIL                         "(nil)"
+#define STR_NULL                        "(null)"
+#define HEXADECIMAL_ZERO_ADDRESS        "0x"
 
 #endif

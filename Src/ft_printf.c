@@ -23,6 +23,7 @@ int     ft_printf(char const *format, ...)
     va_end(p_args);
     return (count_read);
 }
+
 /*
 #include <stdio.h>
 int main()

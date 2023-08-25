@@ -46,7 +46,7 @@ void    print_pointer(uintptr_t ptr, unsigned int *count_read)
         (*count_read) += write(1, PTR_NIL, 5);
     else
     {
-        write(1, "0x", 2);
+        write(1, HEXADECIMAL_ZERO_ADDRESS, 2);
         ft_putnbr_base_uintptr(ptr, HEX_NB, LOWER_HEX_BASE);
         (*count_read) += 2 + (ft_len_uintptr(ptr, HEX_NB));
     }

@@ -30,7 +30,7 @@ void	print_pointer(unsigned long ptr, int *count_read)
 {
 	if (ptr == NULL)
 	{
-		ft_putstr(NULL_ADDRESS, count_read);Í
+		ft_putstr(NULL_ADDRESS, count_read);
 		return ;
 	}
 	ft_putstr(ZERO_ADDRESS, count_read);

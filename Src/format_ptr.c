@@ -28,9 +28,9 @@ void	ft_putnbr_base_uintptr(unsigned long nb, unsigned long base_number, \
 
 void	print_pointer(unsigned long ptr, int *count_read)
 {
-	if (ptr == 0)
+	if (ptr == NULL)
 	{
-		ft_putstr(NULL_ADDRESS, count_read);
+		ft_putstr(NULL_ADDRESS, count_read);Í
 		return ;
 	}
 	ft_putstr(ZERO_ADDRESS, count_read);

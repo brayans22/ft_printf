@@ -35,7 +35,6 @@
 # define DEC_BASE                    		"0123456789"
 # define MIN_RANGE_INT_IN_STR_FORMAT     	"-2147483648"
 # define MIN_RANGE_INT_IN_INT_FORMAT     	-2147483648
-# define PTR_NIL							"(nil)"
 # define NULL_ADDRESS                    	"0x0"
 # define STR_NULL                        	"(null)"
 # define ZERO_ADDRESS                    	"0x"
